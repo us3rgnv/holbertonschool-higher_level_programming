@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-# This script imports functions from calculator_1.py and performs calculations
+# Perform calculations using calculator_1 functions
 
-from calculator_1 import add, sub, mul, div
+import calculator_1
 
 if __name__ == "__main__":
     a = 10
     b = 5
-    print("{} + {} = {}".format(a, b, add(a, b)))
-    print("{} - {} = {}".format(a, b, sub(a, b)))
-    print("{} * {} = {}".format(a, b, mul(a, b)))
-    print("{} / {} = {}".format(a, b, div(a, b)))
+    print("{} + {} = {}".format(a, b, calculator_1.add(a, b)))
+    print("{} - {} = {}".format(a, b, calculator_1.sub(a, b)))
+    print("{} * {} = {}".format(a, b, calculator_1.mul(a, b)))
+    print("{} / {} = {}".format(a, b, calculator_1.div(a, b)))

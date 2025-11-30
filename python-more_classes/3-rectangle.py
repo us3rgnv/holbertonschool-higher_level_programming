@@ -54,12 +54,14 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        """Return the rectangle as a string made of '#' characters."""
+        """Return the rectangle as a string made of '#' characters.
+        If width or height is 0, return an empty string.
+        """
         if self.width == 0 or self.height == 0:
             return ""
         lines = ['#' * self.width for _ in range(self.height)]
         return '\n'.join(lines)
 
     def __repr__(self):
-        """Return the official string representation of the rectangle."""
+        """Return the official string representation of the rectangle object."""
         return f"<{self.__class__.__name__} object at {hex(id(self))}>"

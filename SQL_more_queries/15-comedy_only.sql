@@ -1,11 +1,14 @@
 -- 15-comedy_only.sql
--- This script lists all shows that belong to the Comedy genre
--- Only one SELECT statement is used
--- Results are sorted by tv show title ascending
-
-SELECT ts.title
-FROM tv_shows ts
-JOIN tv_show_genres tsg ON ts.id = tsg.tv_show_id
-JOIN genres g ON tsg.genre_id = g.id
-WHERE g.name = 'Comedy'
-ORDER BY ts.title ASC;
+-- List all Comedy shows
+SELECT tv_shows.title
+FROM tv_shows
+WHERE tv_shows.id IN (
+    SELECT tv_show_genres.show_id
+    FROM tv_show_genres
+    WHERE tv_show_genres.genre_id = (
+        SELECT tv_genres.id
+        FROM tv_genres
+        WHERE tv_genres.name = 'Comedy'
+    )
+)
+ORDER BY tv_shows.title ASC;

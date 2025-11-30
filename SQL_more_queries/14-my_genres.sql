@@ -1,11 +1,14 @@
 -- 14-my_genres.sql
--- This script lists all genres for the show Dexter
--- Only one SELECT statement is used
--- Results are sorted by genre name ascending
-
-SELECT g.name
-FROM genres g
-JOIN tv_show_genres tsg ON g.id = tsg.genre_id
-JOIN tv_shows ts ON tsg.tv_show_id = ts.id
-WHERE ts.title = 'Dexter'
-ORDER BY g.name ASC;
+-- List all genres of the show Dexter
+SELECT tv_genres.name
+FROM tv_genres
+WHERE tv_genres.id IN (
+    SELECT tv_show_genres.genre_id
+    FROM tv_show_genres
+    WHERE tv_show_genres.show_id = (
+        SELECT tv_shows.id
+        FROM tv_shows
+        WHERE tv_shows.title = 'Dexter'
+    )
+)
+ORDER BY tv_genres.name ASC;

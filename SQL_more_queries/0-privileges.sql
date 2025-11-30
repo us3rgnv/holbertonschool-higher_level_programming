@@ -1,11 +1,6 @@
--- Create users if they do not exist
-CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost';
-CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost';
+-- 0-privileges.sql
+-- This script lists privileges of user_0d_1 and user_0d_2
+-- Expected output if users do not exist: ERROR 1141
 
--- Grant privileges (optional, for testing)
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
--- GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost'; -- optional
-
--- Show grants for each user
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
 SHOW GRANTS FOR 'user_0d_2'@'localhost';

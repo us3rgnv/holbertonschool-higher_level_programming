@@ -1,20 +1,20 @@
-# Python Inheritance - 7-base_geometry
+#!/usr/bin/python3
+"""
+Module: BaseGeometry
+Contains the BaseGeometry class with area and integer_validator methods.
+"""
 
-## Description
-This module defines a class `BaseGeometry` with two public instance methods:
 
-1. `area()`: Raises an exception indicating that it is not implemented.
-2. `integer_validator(name, value)`: Validates that `value` is an integer greater than 0. Raises `TypeError` or `ValueError` if the validation fails.
+class BaseGeometry:
+    """BaseGeometry class"""
 
-## Usage
-```python
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    def area(self):
+        """Public method: raises an Exception"""
+        raise Exception("area() is not implemented")
 
-bg = BaseGeometry()
-bg.integer_validator("my_int", 12)
-bg.integer_validator("width", 89)
-
-try:
-    bg.integer_validator("name", "John")
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    def integer_validator(self, name, value):
+        """Validates that value is an integer > 0"""
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")

@@ -1,5 +1,3 @@
--- 10-genre_id_by_show.sql
--- List all shows with their genre IDs
 SELECT TV_SHOWS.TITLE, TV_SHOW_GENRES.GENRE_ID
 FROM TV_SHOWS
 INNER JOIN TV_SHOW_GENRES

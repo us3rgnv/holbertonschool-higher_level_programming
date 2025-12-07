@@ -1,31 +1,22 @@
 #!/usr/bin/python3
-"""
-Module: 11-square
-Defines a Square class that inherits from Rectangle.
-Size is private, validated as a positive integer, and area() is implemented.
-"""
+"""A Square class is created"""
+
 
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
-    """Square class inheriting from Rectangle."""
+    """class square"""
 
     def __init__(self, size):
-        """
-        Initialize a Square.
-
-        Args:
-            size (int): Size of the square sides (must be positive integer)
-        """
+        """init"""
         self.integer_validator("size", size)
         self.__size = size
-        super().__init__(size, size)
+
+    def area(self):
+        """area"""
+        return self.__size * self.__size
 
     def __str__(self):
-        """
-        Return the string representation of the Square.
-
-        Format: [Square] width/height
-        """
-        return "[Square] {}/{}".format(self._Rectangle__width,
-                                       self._Rectangle__height)
+        """str"""
+        return f"[Square] {self.__size}/{self.__size}"

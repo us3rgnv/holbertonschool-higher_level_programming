@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""Script that takes your GitHub credentials and displays your id using the GitHub API"""
+"""
+Script that takes your GitHub credentials and displays your id
+using the GitHub API
+"""
 
 import sys
 import requests
+
 
 if __name__ == "__main__":
     username = sys.argv[1]

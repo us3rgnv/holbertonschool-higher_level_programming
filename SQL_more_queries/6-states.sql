@@ -1,18 +1,7 @@
--- 6-states.sql
--- This script creates the database 'hbtn_0d_usa' and the table 'states'
--- The table 'states' has columns:
--- id INT, primary key, unique, auto-increment, NOT NULL
--- name VARCHAR(256) NOT NULL
--- If the database or table already exists, the script will not fail
-
--- Create database if it does not exist
+-- states
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
-
--- Use the database
 USE hbtn_0d_usa;
-
--- Create table if it does not exist
-CREATE TABLE IF NOT EXISTS states (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(256) NOT NULL
+CREATE TABLE IF NOT EXISTS states(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(256) NOT NULL
 );
